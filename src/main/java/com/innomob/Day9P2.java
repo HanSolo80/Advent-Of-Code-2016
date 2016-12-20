@@ -38,9 +38,7 @@ public class Day9P2 {
             String suffix = input.substring(input.indexOf(marker) + marker.length() + chars);
             long replaced = 0;
             String repeatString = input.substring(input.indexOf(marker) + marker.length(), input.indexOf(marker) + marker.length() + chars);
-            for(int i = 0; i < times; i++) {
-                replaced += processNext(repeatString);
-            }
+            replaced += processNext(repeatString) * times;
             return (long) prefix.length() + replaced + processNext(suffix);
         } else {
             return (long) input.length();
